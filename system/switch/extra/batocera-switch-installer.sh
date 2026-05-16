@@ -206,6 +206,8 @@ mkdir /userdata/system/configs 2>/dev/null
 mkdir /userdata/system/configs/evmapy 2>/dev/null
 mkdir /userdata/system/configs/emulationstation 2>/dev/null
 
+mkdir -p /userdata/system/.local/share/applications 2>/dev/null
+
 # -------------------------------------------------------------------- 
 # FILL /USERDATA/SYSTEM/SWITCH/EXTRA
 path=/userdata/system/switch/extra
@@ -311,15 +313,13 @@ wget -q --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/Swit
 wget -q --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/Switch Updater-screenshot.png" "$url/Switch Updater-screenshot.png"
 wget -q --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/Switch Updater-wheel.png" "$url/Switch Updater-wheel.png"
 # -------------------------------------------------------------------- 
-# # FILL /USERDATA/SYSTEM/.LOCAL/SHARE/APPLICATIONS
-# path=/userdata/system/.local/share/applications
-# url=https://raw.githubusercontent.com/foclabroc/batocera-switch/main/system/switch/extra
-# wget --show-progress --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/citron-config.desktop" "$url/citron-config.desktop"
-# # -------------------------------------------------------------------- 
-# # FILL /USERDATA/SYSTEM/.LOCAL/SHARE/APPLICATIONS
-# path=/userdata/system/.local/share/applications
-# url=https://raw.githubusercontent.com/foclabroc/batocera-switch/main/system/switch/extra
-# wget --show-progress --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/sudachi-config.desktop" "$url/sudachi-config.desktop"
+# --------------------------------------------------------------------
+# FILL /USERDATA/SYSTEM/.LOCAL/SHARE/APPLICATIONS
+path=/userdata/system/.local/share/applications
+url=https://raw.githubusercontent.com/foclabroc/batocera-switch/main/system/switch/extra
+wget -q --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/eden-config.desktop" "$url/eden-config.desktop"
+wget -q --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/citron-config.desktop" "$url/citron-config.desktop"
+wget -q --tries=10 --no-check-certificate --no-cache --no-cookies -O "$path/sudachi-config.desktop" "$url/sudachi-config.desktop"
 # -------------------------------------------------------------------- 
 # FILL /USERDATA/ROMS/SWITCH
 path=/userdata/roms/switch
